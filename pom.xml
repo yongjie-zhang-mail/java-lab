@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
+
+	<groupId>com.yj</groupId>
+	<artifactId>lab</artifactId>
+	<version>1.0.0</version>
+	<name>lab</name>
+	<description>Lab project</description>
+
+	<!-- 多模块 -->
+	<modules>
+		<module>lab-spring</module>
+		<!--		<module>lab-spark</module>-->
+		<!--		<module>lab-log-generator</module>-->
+	</modules>
+
+	<!-- 属性，可在其它地方引用 -->
+	<properties>
+		<java.version>11</java.version>
+		<spring.boot.version>2.5.5</spring.boot.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<!-- parent 写法 -->
+	<!--
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.5.5</version>
+		<relativePath/>
+	</parent>
+	-->
+
+	<!-- 依赖；子模块会继承这些依赖 -->
+	<dependencies>
+
+	</dependencies>
+
+	<!-- 依赖；子模块默认不会继承这些依赖；可通过在<dependencies>里，主动引用来继承； -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-parent</artifactId>
+				<version>${spring.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<allocations>
+    <queue name="ar">
+        <schedulingPolicy>fair</schedulingPolicy>
+        <maxResources>1638400 mb, 400 vcores</maxResources>
+        <weight>1.0</weight>
+    </queue>
+    <queue name="cc">
+        <schedulingPolicy>fair</schedulingPolicy>
+        <maxResources>204800 mb, 50 vcores</maxResources>
+        <weight>1.0</weight>
+    </queue>
+    <queue name="dcg_poc">
+        <schedulingPolicy>fair</schedulingPolicy>
+        <maxResources>40960 mb, 10 vcores</maxResources>
+        <weight>1.0</weight>
+    </queue>
+    <queue name="default">
+        <schedulingPolicy>fair</schedulingPolicy>
+        <maxResources>4915200 mb, 1200 vcores</maxResources>
+        <fairSharePreemptionThreshold>0.0</fairSharePreemptionThreshold>
+        <weight>1.0</weight>
+    </queue>
+    <queue name="edw">
+        <schedulingPolicy>fair</schedulingPolicy>
+        <maxResources>6144000 mb, 1500 vcores</maxResources>
+        <weight>1.0</weight>
+    </queue>
+    <queue name="fr">
+        <schedulingPolicy>fair</schedulingPolicy>
+        <maxResources>614400 mb, 150 vcores</maxResources>
+        <weight>1.0</weight>
+    </queue>
+    <queue name="jdbc_spark">
+        <schedulingPolicy>fair</schedulingPolicy>
+        <maxResources>927744 mb, 202 vcores</maxResources>
+        <weight>1.0</weight>
+    </queue>
+    <queue name="mi">
+        <schedulingPolicy>fair</schedulingPolicy>
+        <maxResources>409600 mb, 40 vcores</maxResources>
+        <weight>1.0</weight>
+    </queue>
+    <queue name="prc_c360">
+        <schedulingPolicy>fair</schedulingPolicy>
+        <maxResources>327680 mb, 80 vcores</maxResources>
+        <weight>1.0</weight>
+    </queue>
+    <queue name="proj_cbi">
+        <schedulingPolicy>fair</schedulingPolicy>
+        <maxResources>2293760 mb, 560 vcores</maxResources>
+        <weight>1.0</weight>
+    </queue>
+    <queue name="proj_gucp">
+        <schedulingPolicy>fair</schedulingPolicy>
+        <maxResources>1228800 mb, 300 vcores</maxResources>
+        <weight>1.0</weight>
+    </queue>
+    <queue name="proj_rtcd">
+        <schedulingPolicy>fair</schedulingPolicy>
+        <maxResources>614400 mb, 150 vcores</maxResources>
+        <weight>1.0</weight>
+    </queue>
+    <queue name="proj_scpa">
+        <schedulingPolicy>fair</schedulingPolicy>
+        <minResources>40960 mb, 15 vcores</minResources>
+        <maxResources>325080 mb, 105 vcores</maxResources>
+        <weight>1.0</weight>
+        <queue name="prediction">
+            <aclSubmitApps>proj_scpa_prd,p65_g97</aclSubmitApps>
+            <minResources>40960 mb, 10 vcores</minResources>
+            <maxResources>325080 mb, 105 vcores</maxResources>
+            <weight>10.0</weight>
+        </queue>
+        <queue name="training">
+            <aclSubmitApps>proj_scpa_prd,p65_g97</aclSubmitApps>
+            <maxResources>325080 mb, 105 vcores</maxResources>
+            <weight>5.0</weight>
+        </queue>
+        <queue name="scpa_prep">
+            <aclSubmitApps>p65_g97</aclSubmitApps>
+            <maxResources>325080 mb, 105 vcores</maxResources>
+            <weight>3.0</weight>
+        </queue>
+        <queue name="scpa_tst">
+            <aclSubmitApps>p65_g97</aclSubmitApps>
+            <maxResources>325080 mb, 105 vcores</maxResources>
+            <weight>2.0</weight>
+        </queue>
+        <queue name="scpa_dev">
+            <aclSubmitApps>p65_g97</aclSubmitApps>
+            <maxResources>325080 mb, 105 vcores</maxResources>
+            <weight>1.0</weight>
+        </queue>
+    </queue>
+    <queue name="spark">
+        <schedulingPolicy>fair</schedulingPolicy>
+        <maxResources>1480704 mb, 322 vcores</maxResources>
+        <weight>1.0</weight>
+    </queue>
+    <queue name="test">
+        <schedulingPolicy>fair</schedulingPolicy>
+        <maxResources>204800 mb, 50 vcores</maxResources>
+        <weight>1.0</weight>
+    </queue>
+    <queue name="tmp">
+        <schedulingPolicy>fair</schedulingPolicy>
+        <maxResources>819200 mb, 200 vcores</maxResources>
+        <weight>1.0</weight>
+    </queue>
+</allocations>

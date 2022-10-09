@@ -1,0 +1,48 @@
+<configuration>
+
+    <property>
+        <name>fs.hdfs.impl.disable.cache</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>hive.metastore.client.connect.retry.delay</name>
+        <value>5</value>
+    </property>
+
+    <property>
+        <name>hive.metastore.client.socket.timeout</name>
+        <value>1800</value>
+    </property>
+
+    <property>
+        <name>hive.metastore.filter.hook</name>
+        <value>org.apache.hadoop.hive.metastore.DefaultMetaStoreFilterHookImpl</value>
+    </property>
+
+    <property>
+        <name>hive.metastore.uris</name>
+        <value>thrift://10.122.36.40:30083,thrift://10.122.36.41:30083,thrift://10.122.36.42:30083</value>
+    </property>
+
+    <property>
+        <name>hive.server2.enable.doAs</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>hive.server2.thrift.port</name>
+        <value>10016</value>
+    </property>
+
+    <property>
+        <name>hive.server2.transport.mode</name>
+        <value>binary</value>
+    </property>
+
+    <property>
+        <name>hive.support.concurrency</name>
+        <value>true</value>
+    </property>
+
+</configuration>

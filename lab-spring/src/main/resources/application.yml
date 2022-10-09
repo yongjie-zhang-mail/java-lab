@@ -1,0 +1,61 @@
+# Server
+server:
+  # 端口
+  port: 8080
+  # 连接建立超时时间
+  connection-timeout: 12000
+  # tomcat配置
+  tomcat:
+    # 等待队列长度，默认100；
+    accept-count: 1000
+    # 最大工作线程数，默认200；服务器CPU核心数的200~250倍之间；配置4c8g，线程数800；
+    max-threads: 1000
+    # 最小工作线程数，默认10；
+    min-spare-threads: 500
+    # 最大可被连接数，默认10000；一般这个值要大于(max-threads)+(accept-count)
+    max-connections: 10000
+
+#日志
+logging:
+  level:
+    root: info
+
+#活跃配置
+spring:
+  application:
+    name: lab
+  profiles:
+    active: es,dev
+
+#线程池配置
+threadpool:
+  # 主线程池
+  main:
+    # 核心线程数
+    core-pool-size: 8
+    # 最大线程数
+    max-pool-size: 16
+    # 阻塞队列大小
+    queue-capacity: 512
+    # 线程名称前缀
+    thread-name-prefix: mainTp-
+  # 其它线程池
+  second:
+    core-pool-size: 4
+    max-pool-size: 8
+    queue-capacity: 256
+    thread-name-prefix: secondTp-
+
+#黑名单配置
+black-list:
+  count: 40
+  time: 10
+
+
+
+
+
+
+
+
+

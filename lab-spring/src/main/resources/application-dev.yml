@@ -1,0 +1,123 @@
+#主配置
+spring:
+  datasource:
+    primary:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbcUrl: jdbc:mysql://10.122.130.188:3306/lucp?characterEncoding=UTF-8&useUnicode=true&useSSL=false&useCompression=false&zeroDateTimeBehavior=round&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+      username: a_appconnect
+      password: Z9c~v6c~
+      type: com.zaxxer.hikari.HikariDataSource
+      hikari:
+        # 连接池最大连接数
+        maximum-pool-size: 100
+        # 连接池最小连接数
+        minimum-idle: 10
+        # 自动提交事务
+        auto-commit: true
+        # 连接池名称
+        pool-name: hikariPool
+        # 连接空闲时间，默认10分钟
+        #        idle-timeout: 600000
+        # 连接的最大生命周期；默认30分钟，应配置比数据库超时配置，少30s
+        #        max-lifetime: 1800000
+        # 客户端等待可用连接的最长时间，默认值30s；
+        #        connection-timeout: 30000
+    second:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://10.122.61.79:3306/member
+      username: a_appconnect
+      password: StcH7C:C
+      type: com.zaxxer.hikari.HikariDataSource
+      hikari:
+        # 连接池最大连接数
+        maximum-pool-size: 100
+        # 连接池最小连接数
+        minimum-idle: 10
+        # 自动提交事务
+        auto-commit: true
+        # 连接池名称
+        pool-name: hikariPool
+        # 连接空闲时间，默认10分钟
+        #        idle-timeout: 600000
+        # 连接的最大生命周期；默认30分钟，应配置比数据库超时配置，少30s
+        #        max-lifetime: 1800000
+        # 客户端等待可用连接的最长时间，默认值30s；
+        #        connection-timeout: 30000
+    medical:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://mynode2:3306/medical
+      username: root
+      password: rooT-1234
+      type: com.zaxxer.hikari.HikariDataSource
+      hikari:
+        # 连接池最大连接数
+        maximum-pool-size: 100
+        # 连接池最小连接数
+        minimum-idle: 10
+        # 自动提交事务
+        auto-commit: true
+        # 连接池名称
+        pool-name: hikariPool
+        # 连接空闲时间，默认10分钟
+        #        idle-timeout: 600000
+        # 连接的最大生命周期；默认30分钟，应配置比数据库超时配置，少30s
+        #        max-lifetime: 1800000
+        # 客户端等待可用连接的最长时间，默认值30s；
+        #        connection-timeout: 30000
+  redis:
+    #    sentinel:
+    #      master: sentinel10.122.81.181
+    #      nodes: 10.122.81.181:26379,10.122.81.195:26379,10.122.81.174:26379
+    #    password: Kv0604H1613u
+    sentinel:
+      master: sentinel10.122.25.111
+      nodes: 10.122.25.111:26379,10.122.25.111:26380,10.122.25.111:26381
+    password: 8ik,9ol.
+    jedis:
+      pool:
+        # 最大连接数；例如每个请求平均耗时50ms，那么每个连接的QPS=1000ms/50ms=20qps；max-total=10000qps/20qps=500最大连接数
+        max-total: 500
+        # 最大可空闲的连接数；实际的最大连接数；
+        max-idle: 400
+        # 最小可空闲的连接数；实际的最小连接数；
+        min-idle: 10
+        # 最大等待时间
+        max-wait: 20000
+        # 超时时间
+        timeout: 10000
+  elasticsearch:
+    schema: http
+    address: 10.122.189.108:9202,10.122.189.109:9202,10.122.189.110:9202,10.122.189.111:9202
+    connectTimeout: 1000
+    socketTimeout: 30000
+    connectionRequestTimeout: 500
+    maxConnectNum: 100
+    maxConnectPerRoute: 100
+
+#swagger
+swagger:
+  documentation:
+    enabled: true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
