@@ -1,7 +1,9 @@
 package com.yj.lab.spring.service.common.impl;
 
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
+import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -15,6 +17,7 @@ import static com.yj.lab.spring.service.common.impl.CommonLab.commonTask;
  * @author Zhang Yongjie
  */
 @Slf4j
+@Component
 public class ThreadPoolLab {
 
     // 构造线程池
@@ -32,7 +35,27 @@ public class ThreadPoolLab {
     public static void main(String[] args) {
 //        testRunnable();
 //        testCallable();
-        testInvokeAll();
+//        testInvokeAll();
+//        testServiceRef();
+    }
+
+    @SneakyThrows
+    public void testServiceRef() {
+
+        log.info("开始");
+
+        CountDownLatch cdl = new CountDownLatch(10);
+
+        for (int i = 0; i < 10; i++) {
+            Runnable task = new RunnableTask(cdl);
+            tp.execute(task);
+            TimeUnit.SECONDS.sleep(3);
+        }
+
+        cdl.await();
+
+        log.info("完成");
+
     }
 
     private static void testInvokeAll() {

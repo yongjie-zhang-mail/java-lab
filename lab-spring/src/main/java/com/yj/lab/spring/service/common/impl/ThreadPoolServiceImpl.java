@@ -1,6 +1,7 @@
 package com.yj.lab.spring.service.common.impl;
 
 import com.yj.lab.spring.service.common.ThreadPoolService;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
@@ -8,10 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.*;
 
 /**
  * @author Zhang Yongjie
@@ -27,6 +25,28 @@ public class ThreadPoolServiceImpl implements ThreadPoolService {
     public void testTp() {
 //        testTpteSubmit();
         testTpteInvokeAll();
+
+    }
+
+    @SneakyThrows
+    private void testServiceRef() {
+
+        log.info("开始");
+
+        // 获取tpe
+        ThreadPoolExecutor tp2 = secondTp.getThreadPoolExecutor();
+
+        CountDownLatch cdl = new CountDownLatch(10);
+
+        for (int i = 0; i < 10; i++) {
+            Runnable task = new RunnableTask(cdl);
+            secondTp.execute(task);
+            TimeUnit.SECONDS.sleep(3);
+        }
+
+        cdl.await();
+
+        log.info("完成");
 
     }
 
